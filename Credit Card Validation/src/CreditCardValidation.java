@@ -8,18 +8,16 @@ public class CreditCardValidation {
 	static int userChoice;
 	
 public static void main(String[] args) throws IOException
-	{
-	
-	
+{
 	pathOne();
 	pathTwo();
 
-	//pick a path
-		Scanner userPath = new Scanner(System.in);
-		System.out.println("1. Would you like to enter a credit card number to check?" 
-						+ " OR 2. Would you like to import a text file to check?");
-		int userChoice = userPath.nextInt();
-		long [] userNumberArray = new long [16];
+		//pick a path
+			Scanner userPath = new Scanner(System.in);
+			System.out.println("1. Would you like to enter a credit card number to check?" 
+							+ " OR 2. Would you like to import a text file to check?");
+			int userChoice = userPath.nextInt();
+			long [] userNumberArray = new long [16];
 	
 	if (userChoice == 1)
 	{
@@ -29,11 +27,12 @@ public static void main(String[] args) throws IOException
 	{
 		pathTwo();
 	}
-	}
+	
+}
 public static void pathOne()
 {
-		if (userChoice == 1)
-			{
+	if (userChoice == 1)
+		{
 			
 			System.out.println("Please enter your credit card number below.");
 			Scanner userInput = new Scanner(System.in);
@@ -50,7 +49,7 @@ public static void pathOne()
 			
 	
 
-	for (int i = 0; i < 16; i = i+2)
+			for (int i = 0; i < 16; i = i+2)
 			{
 				userNumberArray[i] = userNumberArray[i] *2; 
 				//System.out.println(userNumberArray[i]);
@@ -94,12 +93,11 @@ public static void pathOne()
 				System.out.println("Your credit card number is not valid.");
 			}
 		
-	
-			}
+		}
 }
 
-public static void pathTwo()
-{
+public static void pathTwo() throws IOException
+	{
 		
 		if (userChoice == 2)
 		{
@@ -107,12 +105,12 @@ public static void pathTwo()
 			while(importedCardNumbers.hasNext())
 			{
 			System.out.println(importedCardNumbers.next());
-		}
+			}
 			
 		}
 		
 	
-}
+	}
 }
 
 				
